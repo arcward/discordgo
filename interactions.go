@@ -217,6 +217,19 @@ const (
 	InteractionContextPrivateChannel InteractionContextType = 2
 )
 
+func (c InteractionContextType) String() string {
+	switch c {
+	case InteractionContextBotDM:
+		return "BOT_DM"
+	case InteractionContextGuild:
+		return "GUILD"
+	case InteractionContextPrivateChannel:
+		return "PRIVATE_CHANNEL"
+	default:
+		return "UNKNOWN"
+	}
+}
+
 // Interaction represents data of an interaction.
 type Interaction struct {
 	ID        string          `json:"id"`
